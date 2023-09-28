@@ -2,26 +2,51 @@
 
 int main()
 {
-	int age;
+	int scores[10];
+	int scoreArrLength = 0, ans;
 
-	printf("Enter passenger's age: ");
-	scanf("%d", &age);
+	printf("Enter student scores (type -1 to start calculation) : ");
+	scanf("%d", &ans);
 
-	if (age <= 12)
+	if (ans == -1)
 	{
-		printf("Give kid card to the passenger");
-	}
-	else if (age <= 25)
-	{
-		printf("Give student card to the passenger");
-	}
-	else if (age >= 60)
-	{
-		printf("Give elder card to the passenger");
+		for (int i = 0; i < 10; i++)
+		{
+			int input;
+
+			printf("Enter score of student %d: ", i + 1);
+			scanf(" %d", &input);
+
+			if (input == -1)
+			{
+				break;
+			}
+
+			else
+			{
+				scores[i] = input;
+				scoreArrLength++;
+			}
+		}
+
+		if (scoreArrLength > 0)
+		{
+			int min = scores[0];
+
+			for (int i = 1; i < scoreArrLength; i++)
+			{
+				if (scores[i] < min)
+				{
+					min = scores[i];
+				}
+			}
+
+			printf("The minimum score is %d.", min);
+		}
 	}
 	else
 	{
-		printf("Give normal card to the passenger");
+		printf("End of program. Goodbye.");
 	}
 
 	return 0;
