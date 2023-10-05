@@ -2,52 +2,55 @@
 
 int main()
 {
-    int scores[10];
-    int scoreArrLength = 0, ans;
+	int scores[10];
+	int scoreArrLength = 0, ans;
 
-    printf("Enter student scores (type -1 to start calculation) : ");
-    scanf("%d", &ans);
+	printf("Enter student scores (type -1 to start calculation) : ");
+	scanf("%d", &ans);
 
-    if (ans == -1)
-    {
-        for (int i = 0; i < 10; i++)
-        {
-            int input;
+	if (ans == -1)
+	{
+		for (int i = 0; i < 10; i++)
+		{
+			int input;
 
-            printf("Enter score of student %d: ", i + 1);
-            scanf(" %d", &input);
+			printf("Enter score of student %d: ", i + 1);
+			scanf(" %d", &input);
 
-            if (input == -1)
-            {
-                break;
-            }
+			if (input == -1)
+			{
+				break;
+			}
 
-            else
-            {
-                scores[i] = input;
-                scoreArrLength++;
-            }
-        }
+			else
+			{
+				scores[i] = input;
+				scoreArrLength++;
+			}
+		}
 
-        if (scoreArrLength > 0)
-        {
-            int min = scores[0];
+		if (scoreArrLength > 0)
+		{
+			int min = scores[0];
+			int studentIndex;
 
-            for (int i = 1; i < scoreArrLength; i++)
-            {
-                if (scores[i] < min)
-                {
-                    min = scores[i];
-                }
-            }
+			for (int i = 1; i < scoreArrLength; i++)
+			{
+				if (scores[i] < min)
+				{
+					min = scores[i];
+					studentIndex = i + 1;
+				}
+			}
 
-            printf("The minimum score is %d.", min);
-        }
-    }
-    else
-    {
-        printf("End of program. Goodbye.");
-    }
+			printf("The minimum score is %d.\n", min);
+			printf("Student %d has minimum score", studentIndex);
+		}
+	}
+	else
+	{
+		printf("End of program. Goodbye.");
+	}
 
-    return 0;
+	return 0;
 }

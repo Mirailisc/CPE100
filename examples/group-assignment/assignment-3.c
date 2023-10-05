@@ -1,9 +1,10 @@
 #include <stdio.h>
+#include <string.h>
 
 int main()
 {
 	int start, end, i, j;
-	char answer;
+	char answer[10];
 
 	do
 	{
@@ -28,7 +29,7 @@ int main()
 
 		printf("Do you want to continue (y/n)?");
 		scanf(" %c", &answer);
-	} while (answer == 'y');
+	} while (strcmp(answer, "YES") != 0);
 
 	printf("End of program. Goodbye.");
 	return 0;

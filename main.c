@@ -1,53 +1,36 @@
 #include <stdio.h>
+#include <string.h>
 
 int main()
 {
-	int scores[10];
-	int scoreArrLength = 0, ans;
+	int start, end, i, j;
+	char answer[10];
 
-	printf("Enter student scores (type -1 to start calculation) : ");
-	scanf("%d", &ans);
-
-	if (ans == -1)
+	do
 	{
-		for (int i = 0; i < 10; i++)
+		printf("Enter start number: ");
+		scanf("%d", &start);
+
+		printf("Enter end number: ");
+		scanf("%d", &end);
+
+		printf("\n");
+
+		for (j = 1; j <= 5; j++)
 		{
-			int input;
-
-			printf("Enter score of student %d: ", i + 1);
-			scanf(" %d", &input);
-
-			if (input == -1)
+			for (i = start; i <= end; i++)
 			{
-				break;
+				printf("%d", i * j);
+				printf(" ");
 			}
 
-			else
-			{
-				scores[i] = input;
-				scoreArrLength++;
-			}
+			printf("\n");
 		}
 
-		if (scoreArrLength > 0)
-		{
-			int min = scores[0];
+		printf("Type AGAIN to continue or END to quit: ");
+		scanf("%s", answer);
+	} while (strcmp(answer, "AGAIN") == 0);
 
-			for (int i = 1; i < scoreArrLength; i++)
-			{
-				if (scores[i] < min)
-				{
-					min = scores[i];
-				}
-			}
-
-			printf("The minimum score is %d.", min);
-		}
-	}
-	else
-	{
-		printf("End of program. Goodbye.");
-	}
-
+	printf("End of program. Goodbye.");
 	return 0;
 }
