@@ -43,8 +43,8 @@ int main()
     printf("Read Matrix M2: \n");
     readMatrix(M2, &rowM2, &colM2);
 
-    printf("M1 dimension: row = %d, col = %d", rowM1, colM1);
-    printf("M2 dimension: row = %d, col = %d", rowM2, colM2);
+    printf("\nM1 dimension: row = %d, col = %d", rowM1, colM1);
+    printf("\nM2 dimension: row = %d, col = %d", rowM2, colM2);
 
     printf("\nMatrix M1:\n");
     printMatrix(M1, rowM1, colM1);
